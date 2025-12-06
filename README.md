@@ -1,6 +1,6 @@
 # My_Secure_Project
 
-A totally secure project. No leaks. No mistakes.
+A totally secure project. No leaks. No mistakes.Ever again. 👀
 
 This is Redfox X's super safe codebase where security is always the number one priority.  
 At least… that’s what *he* claims. 😏
