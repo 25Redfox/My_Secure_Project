@@ -1,9 +1,6 @@
 # main.py
 """
-Entry point for My_Secure_Project.
-
-This script simulates a simple client that uses
-a secret API key from config.py to talk to an API endpoint.
+Main entry for My_Secure_Project.
 """
 
 from config import API_KEY, API_ENDPOINT
@@ -12,19 +9,19 @@ from logger import log_info, log_error
 
 
 def main():
-    log_info("Starting My_Secure_Project client...")
+    log_info("Launching client…")
 
     if not API_KEY:
-        log_error("API key is missing! Exiting.")
+        log_error("No API key found. Exiting.")
         return
 
     client = APIClient(api_key=API_KEY, endpoint=API_ENDPOINT)
 
     try:
         status = client.health_check()
-        log_info(f"API health check OK: {status}")
+        log_info(status)
     except Exception as e:
-        log_error(f"API health check failed: {e}")
+        log_error(f"Health check failed → {e}")
 
 
 if __name__ == "__main__":
