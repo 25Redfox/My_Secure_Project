@@ -2,8 +2,7 @@
 """
 Fake API client used for the CTF scenario.
 
-This does not perform real HTTP calls. It just simulates
-what a client would do with an API key.
+Simulates API communication safely.
 """
 
 from security import describe_key
@@ -16,9 +15,7 @@ class APIClient:
 
     def health_check(self) -> str:
         """
-        Fake health check. In a real case, this would:
-        - Send an HTTP request to self.endpoint + "/health"
-        - Include self.api_key in an Authorization header
+        Fake health check that returns masked key information.
         """
         key_desc = describe_key(self.api_key)
-        return f"Connected to {self.endpoint} with {key_desc}"
+        return f"Health OK → Endpoint: {self.endpoint} | Auth: {key_desc}"
